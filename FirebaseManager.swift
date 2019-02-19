@@ -32,6 +32,7 @@ class FirebaseManager {
 		return Database.database().reference().child("/logEntries")
 	}()
 	
+	// Post notification when logEntries is updated
 	private (set) var logEntries: [DataSnapshot]? {
 		didSet {
 			NotificationCenter.default.post(name: NSNotification.Name(rawValue: "firebaseDataDidUpdateNotification"), object: nil)
@@ -70,7 +71,7 @@ class FirebaseManager {
 				if snapshot.hasChildren() {
 					entries.append(snapshot)
 				}
-				self.logEentries = entries
+				self.logEntries = entries
 			})
 		}
 	}
