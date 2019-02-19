@@ -16,5 +16,7 @@ Import FirebaseManager.swift into your Xcode project to easily work with Firebas
 
 #### Dependencies:
 Firebase
+
 FirebaseAuth
+
 FirebaseDatabase
