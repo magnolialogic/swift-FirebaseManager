@@ -19,7 +19,7 @@ class FirebaseManager {
 	// Prevent clients from creating another instance
 	private init() {}
 
-	// Creates shared instance
+	// Create shared instance
 	static let sharedManager = FirebaseManager()
 	
 	// Create shared database reference
@@ -44,9 +44,8 @@ class FirebaseManager {
 	
 	// Checks whether user is logged in
 	func checkLoginStatus() {
-		Auth.auth().addStateDidChangeListener { auth, user in
+		Auth.auth().addStateDidChangeListener { (auth, user) in
 			if user == nil {
-				print("no user logged in, fixing that.")
 				self.login()
 			}
 		}
